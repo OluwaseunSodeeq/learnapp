@@ -1,0 +1,48 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --spacing: 4px;
+  --font-body: 'Inter', sans-serif;
+  --font-dm-sans: 'DM Sans', sans-serif;
+
+  --color-orange: #FC4C1E;
+  --color-light-orange: #FF8464;
+  --color-light-ash: #6B7280;
+  --color-ash: #858282;
+  --color-base100: #FFFFFF;
+  --color-black: #000000;
+  --color-success: #17BF63;
+  --color-warning: #FFAD1F;
+  --color-error: #E0245E;
+}
+ */
+
+
+
+@import "tailwindcss";
+
+
+@theme {
+  --spacing: 4px;
+  --font-body: 'Inter', sans-serif;
+  --font-dm-sans: 'DM Sans', sans-serif;
+
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
+  --color-orange: #FC4C1E;
+  --color-light-orange: #FF8464;
+  --color-light-ash: #6B7280;
+  --color-ash: #858282;
+  --color-base100: #FFFFFF;
+  --color-black: #000000;
+  --color-success: #17BF63;
+  --color-warning: #FFAD1F;
+  --color-error: #E0245E;
+
+}
