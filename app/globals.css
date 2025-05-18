@@ -1,25 +1,3 @@
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
-:root {
-  --spacing: 4px;
-  --font-body: 'Inter', sans-serif;
-  --font-dm-sans: 'DM Sans', sans-serif;
-
-  --color-orange: #FC4C1E;
-  --color-light-orange: #FF8464;
-  --color-light-ash: #6B7280;
-  --color-ash: #858282;
-  --color-base100: #FFFFFF;
-  --color-black: #000000;
-  --color-success: #17BF63;
-  --color-warning: #FFAD1F;
-  --color-error: #E0245E;
-}
- */
-
 
 
 @import "tailwindcss";
@@ -45,4 +23,13 @@
   --color-warning: #FFAD1F;
   --color-error: #E0245E;
 
+}
+/* Custom utility to hide scrollbars while keeping scroll functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }

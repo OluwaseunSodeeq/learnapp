@@ -1,21 +1,18 @@
-export default  function Page(){
-    return <div className="h-full bg-base100 flex items-center justify-center flex-col">
-    
-    <div className="gird grid-rows-1 gap-4 p-4">
-            <h1>Dashboard Page</h1>
-            {/* <div className="bg-blue-200 p-4 rounded shadow">
-                <h2 className="text-lg font-bold">Card 1</h2>
-                <p>Content for card 1</p>
-            </div>
-            <div className="bg-blue-200 p-4 rounded shadow">
-                <h2 className="text-lg font-bold">Card 2</h2>
-                <p>Content for card 2</p>
-            </div>
-            <div className="bg-blue-200 p-4 rounded shadow">
-                <h2 className="text-lg font-bold">Card 3</h2>
-                <p>Content for card 3</p>
-            </div> */}
+import TopLocation from "../Components/TopLocation";
+import InfoCards from "../Components/InfoCards";
+import CustomBarChart from "../Components/CustomBarChart";
 
+export default  function Page(){
+    return (
+    <div className=" relative h-auto bg-base100 flex items-center justify-center flex-col">
+
+        <div className="relative p-2 flex flex-col gap-3 border ">
+            <div><InfoCards/></div>
+            <div className="flex  justify-between w-full h-auto gap-2.5 bg-base100 shadow-xl rounded-[6px]">
+                    <CustomBarChart/>
+                    <TopLocation/>
+            </div>
+            <div className="w-full h-[600px] bg-error">Bottom</div>
         </div>
-    </div>
+    </div>)
 }
