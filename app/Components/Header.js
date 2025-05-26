@@ -13,10 +13,10 @@ export default function Header() {
 
 
   return (
-    <header className=" flex items-center px-4 py-2 border">
+    <header className="flex items-center px-4 py-2">
       <h1 className='text-black font-bold text-3xl'>{formattedPage}</h1>
 
-      <div className="flex items-center gap-4 ml-auto">
+      <div className="flex items-center gap-4 ml-auto pr-5">
         <HiOutlineBell className="text-light-ash w-4 h-4" />
         <HiOutlineEnvelope className="text-light-ash w-4 h-4" />
 

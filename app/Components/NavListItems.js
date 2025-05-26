@@ -9,7 +9,7 @@ export default function NavListItems({data}) {
     <li key={href} className={`${isActive ? " border-r-orange border-r-3 rounded-xl": ""}`}>
               <Link
                 href={href}
-                className={`flex items-center justify-between gap-3 px-6 py-3 text-base font-medium transition-all rounded-sm ${
+                className={`flex items-center justify-between gap-3 pl-6 py-3 text-base font-medium transition-all rounded-sm ${
                   isActive ? "bg-gray-50 text-gray-800" : "text-gray-600 hover:text-gray-800 hover:bg-gray-50"
                 }`}
               >

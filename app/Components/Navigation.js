@@ -28,18 +28,24 @@ const downItems=[
    {label:"settings",icon:FiSettings, quantity:"0",href:"/settings"},
     {label:"Logout",icon:FiLogOut, quantity:"0",href:"/logout"},
 ]
+
   return (
-    <nav className="flex flex-col h-screen  bg-white ">
+    // <nav className="flex relative flex-col h-screen shadow-md  bg-base100 lg:w-[15rem] xl:w-[18rem]">
+    <nav className="flex fixed left-0 top-0 flex-col h-screen shadow-md  bg-base100 w-full lg:w-[15rem] xl:w-[18rem]">
       {/* LOGO */}
-      <div className=" border relative flex justify-around items-center gap-5 text-black p-3" >
-        <FaBuilding className={`w-6 h-6 transition-all`}/>
-         <h2 className="text-[30px] font-medium text-black font-dm-sans" >IDEANEST</h2> 
-         <span className={`w-8 h-8 absolute  flex items-center justify-center top-5 right-[-15px] rounded-full border border-orange`}><IoIosArrowBack/></span>
-      </div>
+      <div className="relative w-full">
+        <div className="fixed top-0 flex items-center gap-2 text-black  p-3 pl-6" >
+          <FaBuilding className={`w-6 h-6 transition-all`}/>
+          <h2 className="text-[30px] font-medium text-black font-dm-sans" >IDEANEST</h2>
+          <div className='lg:ml-17 xxl:ml-20 w-8 h-8 flex items-center justify-center rounded-full border border-orange'><IoIosArrowBack/></div>
+        </div>
+     </div>
 
       {/* Middle Part */}
       <div >
-      <div className="py-5"></div>
+
+      <div className="py-9"></div>
+
       <ul>
         {navItems.map(({href, label, quantity, icon: Icon}) => {
           const isActive = pathname === href;
@@ -50,6 +56,7 @@ const downItems=[
         })}
       </ul>
       </div>
+
       {/* Down Part */}
       <ul className="absolute bottom-0 w-full">
         {downItems.map(({href, label, quantity, icon: Icon}) => {
