@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import CourseCard from './CourseCard'
+import CourseCard from './DashboardCourseCard'
 
 
 
@@ -198,7 +198,7 @@ import CourseCard from './CourseCard'
 export default function CoursesCards() {
     const [view, setView] = useState(false);
     const [showAll, setShowAll] = useState(false);
-    const viewAllHandler = () => setShowAll(true);
+    const viewAllHandler = () => setShowAll(!showAll);
     const bookmarkHandler = () => setView(!view);
     const coursesToShow = showAll? courses :courses.slice(0,2);
 
@@ -210,7 +210,7 @@ export default function CoursesCards() {
                {/* Header */}
             <div className="flex justify-between items-center m-3 px-3">
                 <h2 className="font-semibold text-lg text-gray-800">My courses</h2>
-                <button className="text-orange text-sm font-medium hover:underline">
+                <button className="text-orange text-sm font-medium hover:underline" onClick={viewAllHandler}>
                 View All
                 </button>
             </div>

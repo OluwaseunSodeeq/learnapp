@@ -6,7 +6,7 @@ import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import { BsBookmark } from "react-icons/bs";
 import Image from "next/image";
 
-export default function CourseCard({course,bookmarkHandler}) {
+export default function DashboardCourseCard({course,bookmarkHandler}) {
 
     const { courseName, facilitator, startDate, level, description, rate,bookmark,studentStack } = course;
   return (

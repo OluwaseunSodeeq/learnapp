@@ -1,52 +1,107 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import QuickMsgCard from './QuickMsgCard';
 
-export default function QuickMessageList() {
-
-  const messages = [
+ const messages = [
     {
       id: 1,
+      name: "Oluwaseun Sodeeq",
+      time: "10:30",
+      message: "I am sorry, sir probably I can’t attend...",
+      img: "https://randomuser.me/api/portraits/women/65.jpg",
+    },
+    {
+      id: 2,
       name: "Alex Pirs",
       time: "10:30",
       message: "I am sorry, sir probably I can’t attend...",
       img: "https://randomuser.me/api/portraits/men/32.jpg",
     },
     {
-      id: 2,
+      id: 3,
       name: "Kris Bannet",
       time: "10:30",
       message: "I am sorry, sir probably I can’t attend...",
       img: "https://randomuser.me/api/portraits/women/44.jpg",
     },
     {
-      id: 3,
+      id: 4,
       name: "Amanda Pirs",
       time: "10:30",
       message: "I am sorry, sir probably I can’t attend...",
       img: "https://randomuser.me/api/portraits/women/65.jpg",
     },
     {
-      id: 4,
+      id: 5,
       name: "Iren Man",
       time: "10:30",
       message: "I am sorry, sir probably I can’t attend...",
       img: "https://randomuser.me/api/portraits/men/45.jpg",
     },
     {
-      id: 5,
+      id: 6,
       name: "Amanda Pirs",
       time: "10:30",
       message: "I am sorry, sir probably I can’t attend...",
       img: "https://randomuser.me/api/portraits/women/65.jpg",
     },
     {
-      id: 6,
+      id: 7,
+      name: "Alex Pirs",
+      time: "10:30",
+      message: "I am sorry, sir probably I can’t attend...",
+      img: "https://randomuser.me/api/portraits/men/32.jpg",
+    },
+     {
+      id: 8,
+      name: "Alex Pirs",
+      time: "10:30",
+      message: "I am sorry, sir probably I can’t attend...",
+      img: "https://randomuser.me/api/portraits/men/32.jpg",
+    },
+    {
+      id: 9,
+      name: "Kris Bannet",
+      time: "10:30",
+      message: "I am sorry, sir probably I can’t attend...",
+      img: "https://randomuser.me/api/portraits/women/44.jpg",
+    },
+    {
+      id: 10,
+      name: "Amanda Pirs",
+      time: "10:30",
+      message: "I am sorry, sir probably I can’t attend...",
+      img: "https://randomuser.me/api/portraits/women/65.jpg",
+    },
+    {
+      id: 11,
+      name: "Iren Man",
+      time: "10:30",
+      message: "I am sorry, sir probably I can’t attend...",
+      img: "https://randomuser.me/api/portraits/men/45.jpg",
+    },
+    {
+      id: 12,
+      name: "Amanda Pirs",
+      time: "10:30",
+      message: "I am sorry, sir probably I can’t attend...",
+      img: "https://randomuser.me/api/portraits/women/65.jpg",
+    },
+    {
+      id: 13,
       name: "Alex Pirs",
       time: "10:30",
       message: "I am sorry, sir probably I can’t attend...",
       img: "https://randomuser.me/api/portraits/men/32.jpg",
     },
   ];
+export default function QuickMessageList() {
+
+   const [showAll, setShowAll] = useState(false);
+   const viewAllHandler = () => setShowAll(!showAll);
+   const messagesToShow = showAll? messages : messages.slice(0,6);
+
+ 
 
   return (
     <div className='lg:w-[39.5%] rounded-md'  >
@@ -54,14 +109,14 @@ export default function QuickMessageList() {
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
         <h2 className="font-semibold text-lg text-gray-800">Quick Message</h2>
-        <button className="text-orange text-sm font-medium hover:underline">
+        <button className="text-orange text-sm font-medium hover:underline" onClick={viewAllHandler}>
           View All
         </button>
       </div>
 
       {/* Message List */}
       <ul className="space-y-5 pr-3">
-        {messages.map((message)=>(
+        {messagesToShow .map((message)=>(
             <QuickMsgCard message={message} key={message.id} />
         ))}
       </ul>

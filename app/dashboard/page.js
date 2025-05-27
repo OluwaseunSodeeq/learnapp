@@ -1,8 +1,9 @@
 import TopLocation from "../Components/TopLocation";
 import InfoCards from "../Components/InfoCards";
-import CustomBarChart from "../Components/CustomBarChart";
+// import CustomBarChart from "../Components/CustomBarChart";
 import CoursesCards from "../Components/CoursesCards";
 import QuickMessageList from "../Components/QuickMessageList";
+import CustomBarChart from "../Components/CustomBarChartWrapper";
 
 export default  function Page(){
     return (

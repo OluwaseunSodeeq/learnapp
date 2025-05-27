@@ -21,9 +21,9 @@ export default function InfoCards() {
                 <p className='font-bold text-black lg:text-base text-nowrap xl:text-2xl'>{value}</p>
 
                 <div className='flex flex-col'>
-                    <div className='text-orange text-xl flex items-center'>
+                    <div className='text-orange text-base flex items-center'>
                         <Icon/>
-                        <span>{percent}%</span>
+                        <span >{percent}%</span>
                     </div>
                     <p className='text-light-ash text-[18px] text-nowrap'>{text}</p>
                 </div>
