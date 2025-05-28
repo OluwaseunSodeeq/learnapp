@@ -7,6 +7,7 @@ export default function usePagination({ count, pageSize }) {
   const totalPages = Math.ceil(count / pageSize);
 
   const updatePage = (page) => {
+    if (page < 1 || page > totalPages) return; 
     const params = new URLSearchParams(searchParams.toString());
     params.set('page', page);
     router.push(`?${params.toString()}`);

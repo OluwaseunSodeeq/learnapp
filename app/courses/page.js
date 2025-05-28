@@ -190,6 +190,7 @@ const courses = [
 // Keep adding until you reach 50
 ];
 export default function Page() {
+  
     const pageSize = 9;
     const {previousPage,nextPage, updatePage,currentPage,totalPages} = usePagination({ count: courses.length, pageSize });
     const startIndex = (currentPage - 1) * pageSize;
