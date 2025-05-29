@@ -4,6 +4,7 @@
 import CoursesCourseCardList from "../Components/CoursesCourseCardList";
 import CoursesFooter from "../Components/CoursesFooter";
 import HeaderControls from "../Components/HeaderControls";
+// import usePagination from '@/hooks/usePagination'
 import usePagination from "../Components/usePagination";
 const courses = [
   {
@@ -190,21 +191,10 @@ const courses = [
 // Keep adding until you reach 50
 ];
 export default function Page() {
-  
-    const pageSize = 9;
-    const {previousPage,nextPage, updatePage,currentPage,totalPages} = usePagination({ count: courses.length, pageSize });
-    const startIndex = (currentPage - 1) * pageSize;
-    const paginatedCourses = courses.slice(startIndex, startIndex + pageSize);
-    console.log("Paginated Courses:", paginatedCourses);
-    const data ={
-    previousPage,
-    nextPage,
-    updatePage,
-    currentPage,
-    totalPages,
-  }
 
-
+  const  pageSize = 9;
+  const { previousPage, nextPage, updatePage, currentPage, totalPages, paginatedData } =usePagination({ inputData: courses, pageSize });
+   const data ={previousPage, nextPage,updatePage,currentPage,totalPages,paginatedData,}
 
   return (
     <div className="relative h-full pt-[3.5rem] pb-[4rem]">
@@ -213,7 +203,7 @@ export default function Page() {
       </div>
 
       <div className="overflow-y-auto h-full">
-        <CoursesCourseCardList courses={paginatedCourses} />
+        <CoursesCourseCardList courses={paginatedData} />
       </div>
 
       <div className="fixed bottom-0 left-[18rem] right-0 z-20 bg-base100 px-4 py-2">

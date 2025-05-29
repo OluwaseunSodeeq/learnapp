@@ -7,7 +7,7 @@ export default function NavListItems({data}) {
     const {href,label,quantity,Icon, isActive,navType} = data
 
   return (
-    <li key={href} className={`${isActive ? "border-r-orange border-r-4 rounded-xl": ""} w-[15rem]  `}>
+    <li key={href} className={`${isActive ? "border-r-orange border-r-4 rounded-xl": ""} w-[15rem] 2xl:w-[18rem]`}>
               <Link
                 href={href}
                 className={`flex items-center justify-between gap-3 pl-6 py-3 text-base font-medium transition-all rounded-sm ${

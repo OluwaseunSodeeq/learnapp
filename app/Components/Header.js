@@ -14,10 +14,10 @@ export default function Header() {
 
   return (
     // <header className="ml-[15rem] xl:ml-[18rem] w-full fixed lg:w-[100%-15rem] xl:w-[100%-18rem]left-0 top-0 flex items-center px-4 py-2 border-2">
-    <header className="flex items-center justify-between px-4  pb-2">
-      <h1 className='text-black font-bold text-3xl ml-3'>{formattedPage}</h1>
+    <header className="flex items-center justify-between px-4  pb-2 border-r-amber-700">
+      <h1 className='text-black font-bold text-3xl ml-3 xl:ml-3 2xl:ml-15  '>{formattedPage}</h1>
 
-      <div className="flex items-center gap-4 ml-auto pr-5">
+      <div className="flex items-center gap-4 mr-1 2xl:mr-20 ">
         <HiOutlineBell className="text-light-ash w-4 h-4" />
         <HiOutlineEnvelope className="text-light-ash w-4 h-4" />
 

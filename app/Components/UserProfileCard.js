@@ -3,7 +3,7 @@ import { FaPen, FaTrash } from 'react-icons/fa';
 import Image from 'next/image';
 
 export default function UserProfileCard({ userData }) {
-    const { name, email,role,registrationDate,lastActivityDate } = userData;
+  const { name, email,role,registrationDate,lastActivityDate } = userData; 
 
   return (
     <div className="bg-100 shadow-md rounded-lg p-4 w-full max-w-xs border border-gray-200">

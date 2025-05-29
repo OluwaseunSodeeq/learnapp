@@ -9,7 +9,7 @@ export default function TopLocation() {
   ];
 
   const maxValue = Math.max(...locations.map((loc) => loc.value));
-  console.log(maxValue);
+
  return (
     <div className=" lg:w-[40%]  shadow-xl  ">
     {/* <div className="bg-white rounded-xl shadow-md p-4 w-full max-w-md"> */}

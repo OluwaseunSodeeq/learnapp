@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { MdDashboard, MdMiscellaneousServices, MdContactMail, MdBusiness } from 'react-icons/md';
 import { HiOutlineUsers, HiOutlineCalendarDays } from 'react-icons/hi2';
 import { FaBookOpen, FaUserCircle, FaBuilding } from 'react-icons/fa';
@@ -36,7 +35,7 @@ const downItems = [
         <div className="fixed top-0 flex items-center gap-2 text-black  p-3 pl-6" >
           <FaBuilding className={`w-6 h-6 transition-all`}/>
           <h2 className="text-[30px] font-medium text-black font-dm-sans" >IDEANEST</h2>
-          <div className='lg:ml-8 xxl:ml-20 w-8 h-8 flex items-center justify-center rounded-full border border-orange'><IoIosArrowBack/></div>
+          <div className='lg:ml-8 2xl:ml-20 w-8 h-8 flex items-center justify-center rounded-full border border-orange'><IoIosArrowBack/></div>
         </div>
      </div>
 

@@ -137,12 +137,9 @@ const usersData=[
 
 export default  function Page(){
 
-       const pageSize = 12;
-       const {previousPage,nextPage, updatePage,currentPage,totalPages} = usePagination({ count: usersData.length, pageSize });
-       const startIndex = (currentPage - 1) * pageSize;
-       const paginatedUsersData = usersData.slice(startIndex, startIndex + pageSize);
-       const data ={previousPage, nextPage, updatePage, currentPage,totalPages }
-       
+  const pageSize = 9;
+  const { previousPage, nextPage, updatePage, currentPage, totalPages, paginatedData } = usePagination({ inputData: usersData, pageSize });
+  const data = {previousPage, nextPage, updatePage, currentPage, totalPages, paginatedData }
 
     return (
        <div className="relative h-full pt-[3.5rem] pb-[4rem]">
@@ -151,7 +148,7 @@ export default  function Page(){
              </div>
 
              <div className="overflow-y-auto h-full">
-               <UsersCards users={paginatedUsersData} />
+               <UsersCards users={paginatedData} />
              </div>
 
              <div className="fixed bottom-0 left-[18rem] right-0 z-20 bg-base100 px-4 py-2">
