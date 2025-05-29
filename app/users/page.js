@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import CoursesFooter from "../Components/CoursesFooter";
 import HeaderUserControls from "../Components/HeaderUserControls";
 import usePagination from "../Components/usePagination";
@@ -142,6 +143,11 @@ export default  function Page(){
   const data = {previousPage, nextPage, updatePage, currentPage, totalPages, paginatedData }
 
     return (
+       <Suspense fallback={
+            <div className="flex items-center justify-center h-full">
+              <div className="loading loading-spinner loading-lg text-gray-900"></div>
+            </div>
+          }>
        <div className="relative h-full pt-[3.5rem] pb-[4rem]">
              <div className="fixed top-[4rem] left-[18rem] right-0 z-20 bg-base100 px-4 pt-2">
                <HeaderUserControls />
@@ -155,5 +161,6 @@ export default  function Page(){
                <CoursesFooter data={data} />
              </div>
            </div>
+        </Suspense>
     )
 }
