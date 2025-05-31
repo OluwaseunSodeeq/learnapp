@@ -1,7 +1,7 @@
 "use client";
 import { Suspense } from "react";
-import HeaderUserControls from "./HeaderUserControls";
-import UsersCards from "./UsersCards";
+import HeaderUserControls from "./HeaderControlsSecond";
+import UsersCards from "./ProfileCards";
 import CoursesFooter from "./CoursesFooter";
 import usePagination from "./usePagination";
 
@@ -141,11 +141,12 @@ function PaginatedUserContents(){
       const pageSize = 9;
       const { previousPage, nextPage, updatePage, currentPage, totalPages, paginatedData } = usePagination({ inputData: usersData, pageSize });
       const data = {previousPage, nextPage, updatePage, currentPage, totalPages, paginatedData }
+      const buttonArray = ["User's Role","Date of Registration","Last Activity Done"]
 
         return (
            <div className="relative h-full pt-[3.5rem] pb-[4rem]">
                  <div className="fixed top-[4rem] left-[18rem] right-0 z-20 bg-base100 px-4 pt-2">
-                   <HeaderUserControls />
+                   <HeaderUserControls buttonArray={buttonArray} />
                  </div>
 
                  <div className="overflow-y-auto h-full">

@@ -1,5 +1,5 @@
 import React from 'react'
-import UserProfileCard from './UserProfileCard'
+import UserProfileCard from './ProfileCard'
 
 export default function UsersCards({users}) {
 
