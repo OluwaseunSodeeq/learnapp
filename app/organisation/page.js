@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
 import Image from "next/image";
+import DynamicWrapper from "../Components/DynamicWrapper";
 
 export default function Page() {
     const [numb, setNum] = useState(0);
@@ -22,6 +23,7 @@ export default function Page() {
   }));
 
   return (
+    <DynamicWrapper> 
     <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3  lg:grid-cols-6 gap-4 p-4 bg-[#F4FBF8]">
       {products.map((product, index) => {
         const { name, price, image, btn} = product;
@@ -47,9 +49,6 @@ export default function Page() {
             <p className="text-sm text-[#5B5B5B] font-medium mb-2">₦{price.toLocaleString()}</p>
             <div className="lg:max-w-[150px]">
                 {btn}
-                
-                
-            
 
                 </div>
 
@@ -57,5 +56,6 @@ export default function Page() {
         );
       })}
     </div>
+    </DynamicWrapper>
   );
 }

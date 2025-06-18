@@ -1,13 +1,17 @@
+
+
 import TopLocation from "../Components/TopLocation";
 import InfoCards from "../Components/InfoCards";
 // import CustomBarChart from "../Components/CustomBarChart";
 import CoursesCards from "../Components/CoursesCards";
 import QuickMessageList from "../Components/QuickMessageList";
 import CustomBarChart from "../Components/CustomBarChartWrapper";
+import DynamicWrapper from "../Components/DynamicWrapper";
 
 export default  function Page(){
     return (
-    <div className=" relative h-auto bg-base100 flex items-center justify-center flex-col">
+    <DynamicWrapper>
+    <div className={`relative h-auto bg-base100 flex items-center justify-center flex-col `}>
 
         <div className="relative p-2 flex flex-col gap-3 ">
             <div><InfoCards/></div>
@@ -20,5 +24,6 @@ export default  function Page(){
                 <QuickMessageList/>
             </div>
         </div>
-    </div>)
+    </div>
+    </DynamicWrapper>)
 }

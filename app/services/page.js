@@ -1,3 +1,8 @@
+import DynamicWrapper from "../Components/DynamicWrapper";
+
 export default  function Page(){
-    return <h1>Services Page</h1>
+    return (
+    <DynamicWrapper>
+        <h1>Services Page</h1>
+    </DynamicWrapper>)
 }
