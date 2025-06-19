@@ -1,9 +1,10 @@
+import CalendarWrapper from "../Components/CalendarWrapper";
 import DynamicWrapper from "../Components/DynamicWrapper";
 
-export default  function Page(){
-    return (
-        <DynamicWrapper>
-            <h1>Calendar Page</h1>
-        </DynamicWrapper>
-    )
+export default function Page({ children }) {
+  return (
+    <DynamicWrapper>
+      <CalendarWrapper>{children}</CalendarWrapper>
+    </DynamicWrapper>
+  );
 }
