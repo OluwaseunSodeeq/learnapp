@@ -35,7 +35,7 @@ const downItems = [
     // <nav className={`flex fixed left-0 top-0 flex-col h-screen shadow-md  bg-base100 z-20 pl-0 lg:pl-2 lg:pr-3 w-full mt-1 ml-1 ${ open  ? " w-[calc(100% -15rem)] 2xl:w-[calc(100% -18rem)]" : "w-[calc(100% - 2.5rem)]" }`}>
     <nav className={`flex fixed left-0 top-0 flex-col h-screen shadow-md  bg-base100 z-20 pl-2 lg:pr-3 mt-1 ${ open  ? " w-[15rem] 2xl:w-[18rem]" : "w-2.5rem" }`}>
       {/* LOGO */}
-      <div className="relative">
+      <div className="relative ">
         <div className="fixed top-0 flex items-center gap-2 text-black  p-3 pl-2 lg:pl-3" >
           <FaBuilding className={`w-6 h-6 transition-all ml-2`}/>
           { open && <h2 className="text-[30px] font-medium text-black font-dm-sans" >IDEANEST</h2>}

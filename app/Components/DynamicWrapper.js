@@ -5,7 +5,8 @@ import useToggleAsideContext from '../Contexts/asideContext/useToggleAsideContex
 export default function DynamicWrapper({children}) {
     const{open} = useToggleAsideContext();
   return (
-    <div className={`${open ? "w-[calc(100%-15rem)] ml-[15rem] 2xl:ml-[18rem] 2xl:w-[calc(100%-18rem)]" : "w-[1100px] mx-auto"}`} >{children}</div>
+   
+    <div className={`relative ${open ? "w-[calc(100%-15rem)] ml-[15rem] 2xl:ml-[18rem] 2xl:w-[calc(100%-18rem)] mx-auto" : " md:w-[47rem] mx-auto lg:w-[1100px]"}`} >{children}</div>
   )
 }
 

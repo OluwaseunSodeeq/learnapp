@@ -2,12 +2,14 @@
 import React, { useState } from 'react'
 import CourseCard from './DashboardCourseCard'
 import { courses } from '../Data/courses';
+import useToggleAsideContext from '../Contexts/asideContext/useToggleAsideContext';
 
 
 
  
 
 export default function CoursesCards() {
+    const {open} =  useToggleAsideContext();
     const [view, setView] = useState(false);
     const [showAll, setShowAll] = useState(false);
     const viewAllHandler = () => setShowAll(!showAll);
@@ -16,9 +18,8 @@ export default function CoursesCards() {
 
 
     return (
-        <div className='lg:w-[60.5%] shadow-xl/30 rounded-md'>
+        <div className={`relative w-[40rem] md:w-full lg:w-[60.5%] pr-5  h-auto lg:p-0  ${open ?"pl-5":" pl-5 md:pl-10"}`}>
             <div className={`relative w-full overflow-hidden bg-base100 h-full bg-base-100 rounded-md`} >
-            {/* <div className={`w-full flex flex-col gap-2 bg-base100 shadow-md`} > */}
                {/* Header */}
             <div className="flex justify-between items-center m-3 px-3">
                 <h2 className="font-semibold text-lg text-gray-800">My courses</h2>

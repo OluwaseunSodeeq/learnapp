@@ -8,6 +8,7 @@ import {
   Tooltip,
   CartesianGrid,
 } from "recharts";
+import useToggleAsideContext from "../Contexts/asideContext/useToggleAsideContext";
 
 const data = [
   { name: "Page A", amt: 70, label: "Jan" },
@@ -27,10 +28,11 @@ const data = [
 export default function CustomBarChart() {
   const barWidth = 60;
   const chartWidth = data.length * barWidth + 100;
+  const { open } = useToggleAsideContext();
 
   return (
-    <div className="lg:w-[60%] shadow-xl ">
-      <div className="relative w-full overflow-hidden bg-base100 h-full bg-base-100 rounded-md pt-2">
+    <div className={`relative w-[40rem] md:w-[80%] lg:w-[60%]  h-auto pr-5 lg:p-0  ${open ?"pl-5":" pl-5 md:pl-10"}`}>
+      <div className="relative w-full shadow-xl overflow-hidden bg-base100 h-full rounded-md pt-2">
         <div className="flex">
           {/* Fixed Y Axis */}
           <div className="w-[60px] h-[300px] sticky left-0 bg-base-100 z-10">
@@ -53,8 +55,7 @@ export default function CustomBarChart() {
             </BarChart>
           </div>
 
-{/* 
-          <div className="overflow-x-auto"> */}
+          {/* Main Chart Area */}
           <div className="overflow-x-auto scrollbar-hide">
             <div style={{ width: `${chartWidth}px` }} className="min-w-[600px]">
               <BarChart

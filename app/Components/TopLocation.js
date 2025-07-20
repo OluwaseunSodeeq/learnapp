@@ -1,6 +1,9 @@
 
 "use client";
+import useToggleAsideContext from "../Contexts/asideContext/useToggleAsideContext";
+
 export default function TopLocation() {
+  const { open } = useToggleAsideContext();
   const locations = [
     { name: "Ukraine", value: 9.68, color: "bg-red-500" },
     { name: "Italy", value: 8.798, color: "bg-blue-600" },
@@ -11,9 +14,9 @@ export default function TopLocation() {
   const maxValue = Math.max(...locations.map((loc) => loc.value));
 
  return (
-    <div className=" lg:w-[40%]  shadow-xl  ">
-    {/* <div className="bg-white rounded-xl shadow-md p-4 w-full max-w-md"> */}
-    <div className="relative w-full bg-base100 h-full p-4 rounded-md">
+
+    <div className={`relative w-[30rem] md:w-[80%] lg:w-[40%] pr-5  h-auto lg:pl-0  ${open ?"pl-5":" pl-5 md:pl-10"}`}>
+    <div className="relative w-full shadow-xl bg-base100 h-full p-4 rounded-md">
       <h2 className="text-lg font-semibold text-black mb-4">Top Location</h2>
       <div className="space-y-4">
 

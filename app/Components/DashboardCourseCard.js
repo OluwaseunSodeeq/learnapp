@@ -20,7 +20,7 @@ export default function DashboardCourseCard({course,bookmarkHandler}) {
 
       {/* Image */}
       <Image
-        className="w-1/4 object-cover"
+        className="w-1/4 object-cover rounded-md"
         src="/one.png"
         alt="Course thumbnail"
         width={100}

@@ -6,8 +6,8 @@ import { CalendarSnackProvider } from '../Contexts/calendarSnack/CalendarSnackPr
 
 export default function CalendarWrapper() {
   return (
-    <div className="relative flex h-screen max-h-screen w-full flex-col items-center justify-center px-4 pt-4">
-      <div className="relative mt-20 h-full overflow-auto">
+    <div className="relative flex h-screen max-h-screen w-full flex-col items-center justify-center px-4 bg-base100 shadow-xl ">
+      <div className="relative  h-full overflow-auto">
         <CalendarSnackProvider>
           <Calendar />
         </CalendarSnackProvider>

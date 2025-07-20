@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react'
 import QuickMsgCard from './QuickMsgCard';
+import useToggleAsideContext from '../Contexts/asideContext/useToggleAsideContext';
 
  const messages = [
     {
@@ -96,7 +97,7 @@ import QuickMsgCard from './QuickMsgCard';
     },
   ];
 export default function QuickMessageList() {
-
+   const { open } = useToggleAsideContext();
    const [showAll, setShowAll] = useState(false);
    const viewAllHandler = () => setShowAll(!showAll);
    const messagesToShow = showAll? messages : messages.slice(0,6);
@@ -104,7 +105,7 @@ export default function QuickMessageList() {
  
 
   return (
-    <div className='lg:w-[39.5%] rounded-md'  >
+    <div className={`relative w-[30rem] md:w-[80%] pr-7  lg:w-[39.5%]  h-auto lg:p-0  ${open ?"pl-5":" pl-5 md:pl-10 rounded-md"}`}>
     <div className="relative w-full bg-base100 h-full p-4 rounded-md shadow-xl/30">
       {/* Header */}
       <div className="flex justify-between items-center mb-4">

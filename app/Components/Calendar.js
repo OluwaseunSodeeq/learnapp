@@ -148,8 +148,8 @@ const generateCalendar = useMemo(() => {
             data-month={month}
             data-day={day}
             onClick={() => (day ? handleDayClick(day, selectedMonth, year) : null)}
-            className={`relative z-10 m-[-0.5px] group aspect-square w-full grow cursor-pointer rounded-xl border font-medium transition-all hover:z-20 hover:border-cyan-400 sm:-m-px sm:size-20 sm:rounded-2xl sm:border-2 lg:size-36 lg:rounded-3xl 2xl:size-40 ${
-              !day ? 'bg-transparent border-transparent cursor-default' : ''
+            className={`relative z-10 m-[-0.5px] group aspect-square w-full grow cursor-pointer rounded-2 border font-medium transition-all hover:z-20 hover:border-cyan-400 sm:-m-px sm:size-20 sm:rounded-2xl sm:border-2 lg:size-24 lg:rounded-1 2xl:size-28 ${
+              !day ? 'bg-transparent border-1 cursor-default' : ''
             }`}
           >
             {day && (
@@ -199,31 +199,29 @@ const generateCalendar = useMemo(() => {
 
   return (
     // <div className="no-scrollbar w-full calendar-container max-h-full overflow-y-scroll rounded-t-2xl bg-white pb-10 text-slate-800 border-2 shadow-xl">
-    <div className="relative h-full pt-[3.5rem] pb-[4rem]">
-    <div className="no-scrollbar w-full overflow-y-scroll  bg-base100 pb-10 text-gray-800 border-2 shadow-xl">
-      {/* <div className="sticky -top-px z-50 w-full rounded-t-2xl bg-white px-5 pt-7 sm:px-8 sm:pt-8"> */}
-      <div className="sticky -top-px z-50 w-full rounded-t-2xl bg-white px-5 pt-7 sm:px-8 sm:pt-8 border-2">
+    <div className="relative h-full scrollbar-hide overflow-y-scroll  pb-[4rem] shadow-4xl bg-base100">
+    <div className="  bg-base100 pb-10 text-gray-800  shadow-xl">
+      <div className=" w-full rounded-t-2xl bg-base100 px-5 sm:px-8 sm:pt-8">
         <div className="mb-4  w-full">
           <div className="flex flex-wrap gap-2 sm:gap-3">
            <Select name="month" value={`${selectedMonth}`} options={monthOptions} onChange={handleMonthChange} isOpen={isOpen} setIsOpen={setIsOpen} icon={ChevronDown} />
            <Select name="month" value={`${selectedMonth}`} options={courseOptions} onChange={handleMonthChange} isOpen={isOpen} setIsOpen={setIsOpen} icon={SortAsc} />
-            {/* <button onClick={handleTodayClick} className="rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-900 hover:bg-gray-100 lg:px-5 lg:py-2.5">Today</button> */}
           </div>
           <div className="flex w-full mt-2.5 items-center justify-between">
-            <div className='flex gap-1 text-orange '>
-            <ChevronDown onClick={handlePrevMonth} className="  p-1 transition-transform hover:text-orange rotate-[-270deg]"/>
+            <div className='flex gap-1 text-orange cursor-pointer'onClick={handlePrevMonth}>
+            <ChevronDown  className=" cursor-pointer p-1 transition-transform hover:text-orange rotate-[-270deg]"/>
             <span className='ml-2'>{monthNames[selectedMonth -1]}</span>
             </div>
             <h1 className="min-w-16 text-center text-lg font-semibold sm:min-w-20 sm:text-xl">{monthNames[selectedMonth]} {year}</h1>
-            <div className='flex gap-1 text-orange'>
+            <div className='cursor-pointer flex gap-1 text-orange' onClick={handleNextMonth}>
             <span >{monthNames[selectedMonth + 1]}</span>
-            <ChevronDown onClick={handleNextMonth} className="  p-1 transition-transform hover:text-orange rotate-[-90deg]"/>
+            <ChevronDown  className=" cursor-pointer p-1 transition-transform hover:text-orange rotate-[-90deg]"/>
             </div>
           </div>
         </div>
         <div className="grid w-full grid-cols-7 justify-between text-slate-500">
           {daysOfWeek.map((day, index) => (
-            <div key={index} className="w-full border-b border-slate-200 py-2 text-center font-semibold">{day}</div>
+            <div key={index} className="w-full border border-slate-200 py-2 text-center font-semibold">{day}</div>
           ))}
         </div>
       </div>
