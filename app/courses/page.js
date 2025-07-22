@@ -8,7 +8,7 @@ export default function Page() {
 
   return (
     <DynamicWrapper>
-    <Suspense fallback={<div className="flex justify-center items-center h-screen">Loading...</div>}>
+    <Suspense fallback={<div className="relative flex w-full justify-center items-center h-screen">Loading...</div>}>
       <PaginatedCourses />
     </Suspense>
     </DynamicWrapper>

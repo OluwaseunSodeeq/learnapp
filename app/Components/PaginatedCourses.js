@@ -5,6 +5,7 @@ import HeaderControls from "./HeaderControls";
 import CoursesCourseCardList from "./CoursesCourseCardList";
 import CoursesFooter from "./CoursesFooter";
 import usePagination from "./usePagination";
+import Wrapper from "./Wrapper";
 
 const courses = [
   {
@@ -198,20 +199,21 @@ function PaginatedCoursesContents(){
    const data ={previousPage, nextPage,updatePage,currentPage,totalPages,paginatedData,}
 
    return(
-
-    <div className="relative h-full pt-[3.5rem] pb-[4rem]">
-      <div className="fixed top-[4rem] left-[18rem] right-0 z-20 bg-base100 px-4 pt-2">
+    <Wrapper>
+    <div >
+      <div className={`sticky top-[-16px] w-full md:left-[5rem]  right-0 z-10 bg-base100 px-4  `}>
         <HeaderControls />
       </div>
 
-      <div className="overflow-y-auto h-full">
+      <div className="relative overflow-y-auto w-full h-full ">
         <CoursesCourseCardList courses={paginatedData} />
       </div>
 
-      <div className="fixed bottom-0 left-[18rem] right-0 z-20 bg-base100 px-4 py-2">
+      <div className="sticky bottom-[-20px] w-full left-[18rem] right-0 bg-base100 md:px-8 lg:px-6 pt-3 pb-2">
         <CoursesFooter data={data} />
       </div>
     </div>
+    </Wrapper>
    )
 
 }
@@ -219,7 +221,7 @@ function PaginatedCoursesContents(){
 export default function PaginatedCourses() {
   return (
     <Suspense fallback={
-            <div className="flex items-center justify-center h-full">
+            <div className={`relative w-full flex items-center justify-center h-full`}>
               <div className="loading loading-spinner loading-lg text-gray-900"></div>
             </div>
     }>

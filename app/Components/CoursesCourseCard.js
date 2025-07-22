@@ -8,7 +8,7 @@ export default function CoursesCourseCard({course}) {
   const { courseImage, facilitator, numberOfQuiz, numberOfLectures } = course;
   
   return (
-    <div className="w-[300px] bg-white rounded-lg shadow-[0_2px_10px_rgba(0,0,0,0.1)] overflow-hidden font-sans ">
+    <div className="w-[300px] lg:w-[320px] bg-white rounded-lg shadow-[0_2px_10px_rgba(0,0,0,0.1)] overflow-hidden font-sans ">
       {/* Course Image */}
       <div className="px-4 ">
        <Image

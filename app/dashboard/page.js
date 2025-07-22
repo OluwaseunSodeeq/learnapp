@@ -7,11 +7,13 @@ import CoursesCards from "../Components/CoursesCards";
 import QuickMessageList from "../Components/QuickMessageList";
 import CustomBarChart from "../Components/CustomBarChartWrapper";
 import DynamicWrapper from "../Components/DynamicWrapper";
+import Wrapper from "../Components/Wrapper";
 
 export default  function Page(){
     return (
     <DynamicWrapper>
-    <div className={`relative w-full h-auto bg-base100 flex items-center justify-center flex-col`}>
+    <Wrapper>
+    <div className={`relative w-full h-auto pb-3 bg-base100 flex items-center justify-center flex-col`}>
 
         <div className="w-full p-2 flex md:justify-center flex-col gap-3 ">
             <div><InfoCards/></div>
@@ -24,6 +26,10 @@ export default  function Page(){
                 <QuickMessageList/>
             </div>
         </div>
+        <div className="fixed bottom-0 left-[18rem] right-0 z-20 bg-base100 px-4 py-2">
+                {/* <CoursesFooter data={data} /> */}
+        </div>
     </div>
+    </Wrapper>
     </DynamicWrapper>)
 }

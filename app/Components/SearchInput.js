@@ -3,7 +3,7 @@ import { FaSearch } from 'react-icons/fa'
 
 export default function SearchInput() {
   return (
-    <div className="relative w-full max-w-xs">
+    <div className="relative w-full md:w-[15rem] lg:max-w-xs">
         <input
           type="text"
           placeholder="Search by title"

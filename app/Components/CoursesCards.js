@@ -4,10 +4,6 @@ import CourseCard from './DashboardCourseCard'
 import { courses } from '../Data/courses';
 import useToggleAsideContext from '../Contexts/asideContext/useToggleAsideContext';
 
-
-
- 
-
 export default function CoursesCards() {
     const {open} =  useToggleAsideContext();
     const [view, setView] = useState(false);
@@ -18,6 +14,7 @@ export default function CoursesCards() {
 
 
     return (
+        // <div className={`relative w-[40rem] md:w-full lg:w-[60.5%] pr-5  h-auto lg:p-0  ${open ?"pl-5":" pl-5 md:pl-10"}`}>
         <div className={`relative w-[40rem] md:w-full lg:w-[60.5%] pr-5  h-auto lg:p-0  ${open ?"pl-5":" pl-5 md:pl-10"}`}>
             <div className={`relative w-full overflow-hidden bg-base100 h-full bg-base-100 rounded-md`} >
                {/* Header */}

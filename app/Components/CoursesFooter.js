@@ -1,19 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 
 export default function CoursesFooter({data}) {
-
+  
     const {previousPage,nextPage, updatePage, currentPage,totalPages,} = data;
 
+
   return (
-    <div className='h-4rem flex  items-center justify-between bg-base100  pr-4 py-2 lg:pr-17 border-t-1 border-gray-200'>
-        <p className=' text-gray-500 text-sm'> <span className='text-orange font-bold'>{currentPage}</span> out of <span className='text-orange font-bold'>{totalPages}</span> courses are shared</p>
+    <div className="w-full h-4rem flex items-center justify-between bg-base100 pr-4 py-2 lg:pr-17 border-t-1 border-gray-200">
+        <p className='pl-3 text-gray-500 text-sm'> <span className='text-orange font-bold'>{currentPage}</span> out of <span className='text-orange font-bold'>{totalPages}</span> courses are shared</p>
         <div className='flex items-center gap-3 mt-2'>
 
-               <button className={`${currentPage === 1 ? "text-gray-500  cursor-not-allowed" : "cursor-pointer text-orange"
-              }`}
-              disabled={currentPage < 1}
-              onClick={previousPage}
+               <button disabled={currentPage < 1}
+              onClick={previousPage}className={`${currentPage === 1 ? "text-gray-500  cursor-not-allowed" : "cursor-pointer text-orange"}`}
+              
             >
               <IoIosArrowBack/>
             </button>
