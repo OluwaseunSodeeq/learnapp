@@ -5,11 +5,11 @@ import { List, SlidersHorizontal } from 'lucide-react'
 import CoursesFooter from './CoursesFooter'
 import usePagination from './usePagination';
 import UsersRows from './UserRows';
-import FilterButton from './FilterButton';
+import UserHeaderBtn from './UserheaderBtn';
 
 const tableContent = {
     tableHeaders: ["Name", "Role", "Email", "Date of Register", "Last Activity","Action"],
-    
+
      users : [
         {
 
@@ -157,8 +157,8 @@ const tableContent = {
  function UserPageContent() {
 
   const buttonArray = ["User's Role","Date of Registration","Last Activity Done","clear"]
-  const tableHeaders = ["name","role","email","Date of Register","Last Activity"];
-  const  pageSize = 6;
+  // const tableHeaders = ["name","role","email","Date of Register","Last Activity"];
+  const  pageSize = 7;
    const { previousPage, nextPage, updatePage, currentPage, totalPages, paginatedData } = usePagination({ inputData: tableContent.users, pageSize });
    const data ={previousPage, nextPage,updatePage,currentPage,totalPages,}
 
@@ -182,12 +182,18 @@ const tableContent = {
                                 </div>
 
                       </div>
-                      <div className=' bg-base100  flex justify-between items-center gap-3 right-0 z-20 px-4 mt-1 pr-15' >
+                      <div className="grid grid-cols-[1.5fr_1fr_2.5fr_1.5fr_1.5fr_1fr] gap-3 bg-base100 px-4 mt-1 pr-15">
+                           {tableContent.tableHeaders.map((header, index) => (
+                              <UserHeaderBtn value={header} key={index} />
+                        ))}
+                      </div>
+
+                      {/* <div className=' bg-base100  flex justify-between items-center gap-3 right-0 z-20 px-4 mt-1 pr-15' >
                             {tableContent.tableHeaders.map((header, index) => (
                                 <FilterButton value={header} key={index}/>
                             ))}
 
-                       </div>
+                       </div> */}
                     </div>
 
 
