@@ -6,13 +6,13 @@ export default function UsersRow({user}) {
     const { name, email, role, dateOfRegister, lastActivityDate } = user;
 
     return (
-      <div className="grid grid-cols-[1.5fr_1fr_2.5fr_1.5fr_1.5fr_1fr] gap-3 px-4 py-3  text-gray-500">
+      <div className="w-full grid grid-cols-[1.5fr_1fr_2.5fr_1.5fr_1.5fr_1fr] py-3  text-gray-500">
         <div className='flex justify-center text-base '> <span>{name}</span></div>
         <div className='flex justify-center text-base '> <span>{role}</span></div>
         <div className='flex justify-center text-base '> <span>{email}</span></div>
-        <div className='flex justify-center text-base pl-2'> <span>{dateOfRegister}</span></div>
-        <div className='flex justify-center text-base pl-3'> <span>{lastActivityDate}</span></div>
-        <div className='flex justify-center text-base  items-center gap-2 pl-3'>
+        <div className='flex justify-center text-base '> <span>{dateOfRegister}</span></div>
+        <div className='flex justify-center text-base '> <span>{lastActivityDate}</span></div>
+        <div className='flex justify-center text-base  items-center gap-2 '>
              <div className='text-[12px] rounded-full'>
                  <FiCopy className="  cursor-pointer text-gray-400 mr-2" />
              </div>

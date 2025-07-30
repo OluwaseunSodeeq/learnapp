@@ -4,6 +4,7 @@ import HeaderUserControls from "./HeaderControlsSecond";
 import UsersCards from "./ProfileCards";
 import CoursesFooter from "./CoursesFooter";
 import usePagination from "./usePagination";
+import useToggleAsideContext from "../Contexts/asideContext/useToggleAsideContext";
 
 
 
@@ -138,13 +139,16 @@ const usersData=[
 ]
 
 function PaginatedUserContents(){
-      const pageSize = 9;
+      // const pageSize = 9;
+      const {mobileView, mobileBreakpoint,tabletBreakpoint} = useToggleAsideContext();
+      const  pageSize = mobileView ? 7 :  tabletBreakpoint > mobileBreakpoint ? 12 : 5;
+
       const { previousPage, nextPage, updatePage, currentPage, totalPages, paginatedData } = usePagination({ inputData: usersData, pageSize });
       const data = {previousPage, nextPage, updatePage, currentPage, totalPages, paginatedData }
       const buttonArray = ["User's Role","Date of Registration","Last Activity Done"]
 
         return (
-           <div className="relative h-full pt-[3.5rem] pb-[4rem]">
+           <div className="relative h-full  pt-[3.5rem] pb-[4rem]">
                  <div className="fixed top-[4rem] left-[18rem] right-0 z-20 bg-base100 px-4 pt-2">
                    <HeaderUserControls buttonArray={buttonArray} />
                  </div>
@@ -153,7 +157,7 @@ function PaginatedUserContents(){
                    <UsersCards users={paginatedData} />
                  </div>
 
-                 <div className="fixed bottom-0 left-[18rem] right-0 z-20 bg-base100 px-4 py-2">
+                 <div className="fixed w-full bottom-0 lg:left-[16rem] z-20 bg-base100">
                    <CoursesFooter data={data} />
                  </div>
                </div>

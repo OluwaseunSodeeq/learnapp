@@ -6,6 +6,7 @@ import CoursesCourseCardList from "./CoursesCourseCardList";
 import CoursesFooter from "./CoursesFooter";
 import usePagination from "./usePagination";
 import Wrapper from "./Wrapper";
+import useToggleAsideContext from "../Contexts/asideContext/useToggleAsideContext";
 
 const courses = [
   {
@@ -193,11 +194,15 @@ const courses = [
 ];
 
 function PaginatedCoursesContents(){
-
-   const  pageSize = 9;
+  
+   const {mobileView, mobileBreakpoint,tabletBreakpoint} = useToggleAsideContext();
+   const  pageSize = mobileView ? 9 :  tabletBreakpoint > mobileBreakpoint ? 8 : 5;
    const { previousPage, nextPage, updatePage, currentPage, totalPages, paginatedData } = usePagination({ inputData: courses, pageSize });
    const data ={previousPage, nextPage,updatePage,currentPage,totalPages,paginatedData,}
 
+
+   console.log("Tablet size:", mobileView );
+   console.log( "Mobile:", mobileBreakpoint);
    return(
     <Wrapper>
     <div >

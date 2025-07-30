@@ -15,7 +15,7 @@ export default function QuickMsgCard({message:msg}) {
               />
               <div>
                 <p className="font-medium text-sm text-gray-800">{msg.name}</p>
-                <p className="text-xs text-gray-500 truncate w-44">{msg.message}</p>
+                <p className={`text-xs text-gray-500 truncate w-100 lg:w-63`}>{`${msg.message} ...`}</p>
               </div>
             </div>
 

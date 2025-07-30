@@ -6,11 +6,12 @@ import CoursesFooter from './CoursesFooter'
 import usePagination from './usePagination';
 import UsersRows from './UserRows';
 import UserHeaderBtn from './UserheaderBtn';
+import Wrapper from './Wrapper';
+import useToggleAsideContext from '../Contexts/asideContext/useToggleAsideContext';
 
 const tableContent = {
     tableHeaders: ["Name", "Role", "Email", "Date of Register", "Last Activity","Action"],
-
-     users : [
+    users : [
         {
 
     name: "Alice Johnson",
@@ -155,18 +156,22 @@ const tableContent = {
 ]
 }
  function UserPageContent() {
+  const {screensize,tabletBreakpoint,mobileBreakpoint} = useToggleAsideContext();
+  // const  pageSize = screensize > tabletBreakpoint  ? 7 :  tabletBreakpoint > screensize ? 12 : 5;
+const pageSize = screensize > tabletBreakpoint ? 7 : screensize > mobileBreakpoint ? 14: 8;
 
+  console.log(pageSize)
   const buttonArray = ["User's Role","Date of Registration","Last Activity Done","clear"]
-  // const tableHeaders = ["name","role","email","Date of Register","Last Activity"];
-  const  pageSize = 7;
+
    const { previousPage, nextPage, updatePage, currentPage, totalPages, paginatedData } = usePagination({ inputData: tableContent.users, pageSize });
    const data ={previousPage, nextPage,updatePage,currentPage,totalPages,}
 
   return (
-    <div className="relative h-full pt-[9rem] pb-[4rem]">
-                    <div className="fixed top-[4rem] left-[18rem] right-0 z-20 bg-base100 px-4 pt-3">
+    <div className="relative h-full w-[50rem] lg:w-full pt-[1rem] pb-[1rem] ">
+                    {/* <div className="fixed top-[4rem] left-[18rem] right-0 z-20 bg-base100 lg:px-4 pt-3"> */}
+                    <div className="sticky top-0 left-[8rem] lg:left-[18rem] right-0 z-20 bg-base100  pt-1 pr-4">
                       <HeaderUserControls buttonArray={buttonArray} />
-                      <div className=" flex justify-between items-center  right-0 z-20 bg-base100 px-4 mt-1 pr-15 pb-1 ">
+                      <div className=" flex justify-between items-center  right-0 z-20 bg-base100  mt-1 pb-1 ">
                                 <p className='font-semibold text-base text-black'>100 users found</p>
 
                                 <div className='flex items-center gap-4'>
@@ -182,26 +187,19 @@ const tableContent = {
                                 </div>
 
                       </div>
-                      <div className="grid grid-cols-[1.5fr_1fr_2.5fr_1.5fr_1.5fr_1fr] gap-3 bg-base100 px-4 mt-1 pr-15">
+                      <div className="w-full grid grid-cols-[1.5fr_1fr_2.5fr_1.5fr_1.5fr_1fr]  bg-base100  mt-1 ">
                            {tableContent.tableHeaders.map((header, index) => (
                               <UserHeaderBtn value={header} key={index} />
                         ))}
                       </div>
-
-                      {/* <div className=' bg-base100  flex justify-between items-center gap-3 right-0 z-20 px-4 mt-1 pr-15' >
-                            {tableContent.tableHeaders.map((header, index) => (
-                                <FilterButton value={header} key={index}/>
-                            ))}
-
-                       </div> */}
                     </div>
 
 
-                    <div className="overflow-y-auto h-full px-8 pr-15">
+                    <div className="overflow-y-auto h-full">
                       <UsersRows users={paginatedData} />
                     </div>
 
-                    <div className="fixed bottom-0 left-[18rem] right-0 z-20 bg-base100 pr-4 py-2">
+                    <div className="sticky w-full bottom-[-5px]  left-[18rem] right-0 z-20 bg-base100">
                       <CoursesFooter data={data} />
                     </div>
     </div>
@@ -210,11 +208,13 @@ const tableContent = {
 export default function UserPageContentWrapper() {
   return (
     <Suspense fallback={
-            <div className="flex items-center justify-center h-full">
+            <div className="flex items-center justify-center h-full border-2">
               <div className="loading loading-spinner loading-lg text-gray-900"></div>
             </div>
     }>
+      <Wrapper>
         <UserPageContent />
+      </Wrapper>
     </Suspense>
   );
 }

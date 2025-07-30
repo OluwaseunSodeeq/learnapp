@@ -15,7 +15,7 @@ export default function TopLocation() {
 
  return (
 
-    <div className={`relative w-[30rem] md:w-[80%] lg:w-[40%] pr-5  h-auto lg:pl-0  ${open ?"pl-5":" pl-5 md:pl-10"}`}>
+    <div className={`relative w-[40rem] md:w-[80%] lg:w-[40%] pr-5  h-auto lg:pl-0  ${open ?"pl-5":" pl-5 md:pl-10"}`}>
     <div className="relative w-full shadow-xl bg-base100 h-full p-4 rounded-md">
       <h2 className="text-lg font-semibold text-black mb-4">Top Location</h2>
       <div className="space-y-4">

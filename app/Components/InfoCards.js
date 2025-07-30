@@ -14,10 +14,10 @@ export default function InfoCards() {
     ]
     const {open} =  useToggleAsideContext();
   return (
-    <div className={`relative w-[18rem] md:w-full flex flex-wrap lg:justify-between items-center  gap-2 md:gap-3 lg:gap-2  h-auto lg:pl-0 ${open ?"pl-5":" pl-5 md:pl-10"}`}>{cards.map(({title,value,icon:Icon,percent,text})=>{
+    <div className={`relative w-[40rem] md:w-full flex flex-wrap lg:justify-between items-center  gap-2 md:gap-3 lg:gap-2  h-auto lg:pl-0 ${open ?"pl-5":" pl-5 md:pl-10"}`}>{cards.map(({title,value,icon:Icon,percent,text})=>{
 
         return (
-         <div key={title} className='w-[270px] lg:w-[250px] shadow-2xl bg-base100  px-3 pt-1 pb-1 xl:py-2.5 rounded-[6px] cursor-pointer'>
+         <div key={title} className='w-[272px] lg:w-[250px] shadow-2xl bg-base100  px-3 pt-1 pb-1 xl:py-2.5 rounded-[6px] cursor-pointer'>
             <p className='text-light-ash text-base font-medium'>{title}</p>
             <div className='flex items-center justify-between xl:gap-8'>
 

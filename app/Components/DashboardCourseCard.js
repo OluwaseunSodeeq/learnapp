@@ -45,7 +45,7 @@ export default function DashboardCourseCard({course,bookmarkHandler}) {
         <div className="flex justify-between items-center mt-2">
         <div className="flex gap-2 text-xs text-gray-700 ">
           <span className="bg-base1000 px-3 py-1 rounded-full border-gray-300 border">{startDate}</span>
-          <span className="bg-base1000 px-3 py-1 rounded-full border-gray-300 border">Level: {level}</span>
+          <span className="bg-base1000 px-3 py-1 rounded-full border-gray-300 border">{`${ level === ""? "" : "Level"}: ${level}`}</span>
           <span className="bg-base1000 px-3 py-1 rounded-full border-gray-300 border">Type: {studentStack}</span>
         </div>
 
